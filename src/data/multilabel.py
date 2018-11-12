@@ -12,7 +12,7 @@ def multilabel_sample(y, size=1000, min_count=5, seed=None):
         each label.
     """
     try:
-        if (np.unique(y).astype(int) != np.array([0, 1])).all():
+        if (np.unique(y).astype(int) != np.array([0, 1])).any():
             raise ValueError()
     except (TypeError, ValueError):
         raise ValueError('multilabel_sample only works with binary indicator matrices')
